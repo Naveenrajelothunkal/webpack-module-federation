@@ -1,24 +1,35 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import { Provider } from 'react-redux';
-import loadable from 'react-loadable';
 
-import store from './store';
-import LoadComponent from './components/LoadComponent';
+import {store} from './store';
+import Login from "./containers/LoginContainer"
+import DashBoard from "./containers/DashBoard"
 
-const AsyncAppComponent = loadable( {
-    loader: () => import( './components/App' ),
-    loading: LoadComponent
-} );
 
-ReactDOM.render(
-    <BrowserRouter>
-        <Fragment>
-            <Provider store={store}>
-                <AsyncAppComponent />
-            </Provider>
-        </Fragment>
-    </BrowserRouter>,
-    document.getElementById('root')
-);
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Router>
+     <Switch>
+          <Route exact path="/app1">
+            <Login store={store}/>
+          </Route>
+          <Route path="/app1/dashboard">
+            <DashBoard store={store}/>
+          </Route>
+        </Switch>
+     </Router>   
+    </Provider>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+

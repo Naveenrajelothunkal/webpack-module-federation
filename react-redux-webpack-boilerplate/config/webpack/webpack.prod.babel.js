@@ -5,6 +5,7 @@ import paths from './paths';
 module.exports = {
     mode: 'production',
     output: {
+        publicPath: "/app1",
         filename: `${paths.jsFolder}/[name].[hash].js`,
         path: paths.outputPath,
         chunkFilename: '[name].[chunkhash].js'

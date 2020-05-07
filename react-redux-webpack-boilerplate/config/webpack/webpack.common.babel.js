@@ -19,6 +19,11 @@ module.exports = {
         new ModuleFederationPlugin({
             name: "app1",
             library: { type: "var", name: "app1" },
+            filename: 'remoteEntry.js',
+            remotes: {
+                app2: "app2",
+                app3: "app3"
+              },
             shared: ["react", "react-dom"]
           }),
         new HtmlWebpackPlugin({

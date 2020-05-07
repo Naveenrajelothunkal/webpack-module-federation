@@ -6,10 +6,12 @@ export default function Widget() {
     <div style={{
       borderRadius: '4px',
       padding: '2em',
-      backgroundColor: 'purple',
+      backgroundColor: 'rgba(58,63,68,0.5)',
       color: 'white'
     }}>
-      <h2>App 3 Widget</h2>
+      <h2 style={{
+      color: 'white'
+    }}>App 3 Widget</h2>
       <p>Using <strong>momentjs</strong> for format the date</p>
       <p>{moment().format('MMMM Do YYYY, h:mm:ss a')}</p>
     </div>

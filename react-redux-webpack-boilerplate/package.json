@@ -5,7 +5,6 @@
     "main": "src/index.js",
     "scripts": {
         "start": "cross-env NODE_ENV=development webpack-dev-server --open",
-        "start:prod": "cross-env NODE_ENV=production webpack-dev-server --open",
         "build": "cross-env NODE_ENV=production webpack",
         "lint": "eslint ./src/**/**.js",
         "lint:fix": "eslint ./src/**/**.js --fix",
@@ -13,7 +12,8 @@
         "test:watch": "yarn run test --watch",
         "test:cover": "yarn run test --coverage",
         "precommit": "yarn run lint && yarn test",
-        "prepush": "yarn run lint"
+        "prepush": "yarn run lint",
+        "serve": "serve build -p 8080"
     },
     "keywords": [
         "react",
@@ -63,6 +63,7 @@
         "node-sass": "^4.13.0",
         "postcss-loader": "^3.0.0",
         "prettier": "^1.19.1",
+        "react-bootstrap": "^1.0.1",
         "react-testing-library": "^7.0.1",
         "redux-logger": "^3.0.6",
         "sass-loader": "^8.0.0",
@@ -75,13 +76,13 @@
     },
     "dependencies": {
         "cross-env": "^6.0.3",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-loadable": "^5.5.0",
-        "react-redux": "^7.1.3",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "react-redux": "^7.2.0",
+        "redux": "^4.0.5",
         "react-router-dom": "^5.1.2",
-        "redux": "^4.0.4",
         "redux-thunk": "^2.3.0",
+        "serve": "^11.3.0",
         "styled-components": "^4.4.1"
     },
     "jest": {
