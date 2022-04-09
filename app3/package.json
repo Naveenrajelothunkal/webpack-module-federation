@@ -18,7 +18,7 @@
     "serve": "serve dist -p 3003"
   },
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
